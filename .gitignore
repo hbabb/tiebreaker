@@ -1,0 +1,85 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+setup.py
+
+# Virtual environments
+ENV/
+.env
+.venv*
+
+# Package & version managers
+# pdm
+.pdm.toml
+.pdm-python
+.pdm-build/
+pdm.toml
+
+# pdm - PEP 582
+__pypackages__/
+
+# pyenv / rtx / asdf
+.tool-versions
+.python-version
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+coverage.*
+.cache
+nosetests.xml
+*.cover
+.pytest_cache/
+.hypothesis/
+results/
+
+# Type checkers / linters / analysis
+.mypy_cache/
+/.dmypy.json
+.ruff_cache
+.scannerwork/
+
+# Tool caches
+.auto_pytabs_cache/
+.unasyncd_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Documentation builds
+/docs/_build/
+site/
+html/
+
+# Databases
+**/*.sqlite*
+data/*.db*
+
+# Other languages / build output
+node_modules/
+target/
+assets/
+
+# IDEs / editors
+.idea/
+*.iml
+.vscode/
+.zed
+
+# OS files
+.DS_Store
+
+# Test certificates
+certs/

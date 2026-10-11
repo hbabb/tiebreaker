@@ -51,5 +51,6 @@ Docstrings follow the Google style.
   than replacing them.
 - Every public module, class, and function needs a docstring, including
   test files and `__init__.py` files.
+  - Edit: this consequence has been removed by updating the rulls for ruff with per-file-ignores.
 - The existing `app/main.py` and `tests/test_app.py` need docstrings to pass
   `ruff check`.

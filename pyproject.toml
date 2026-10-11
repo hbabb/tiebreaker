@@ -23,6 +23,9 @@ dev = [
 lint.extend-select = [ "D" ]
 lint.pydocstyle.convention = "google"
 
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [ "D104" ]
+
 [tool.pyright]
 venv = ".venv"
 venvPath = "."

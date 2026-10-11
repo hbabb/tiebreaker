@@ -2,26 +2,35 @@
 name = "tiebreaker"
 version = "0.1.0"
 requires-python = ">=3.14"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
+]
 dependencies = [
-    "aiosqlite>=0.22.1",
-    "litestar[sqlalchemy,standard]>=2.24.0",
+  "aiosqlite>=0.22.1",
+  "litestar[sqlalchemy,standard]>=2.24",
 ]
 
 [dependency-groups]
 dev = [
-    "pyright>=1.1.414",
-    "pytest>=9.1.1",
-    "ruff>=0.17.0",
+  "pyright>=1.1.414",
+  "pytest>=9.1.1",
+  "ruff>=0.17",
 ]
 
+[tool.ruff]
+lint.extend-select = [ "D" ]
+lint.pydocstyle.convention = "google"
+
 [tool.pyright]
-venvPath = "."
 venv = ".venv"
+venvPath = "."
 
 [tool.pytest]
-addopts = ["--import-mode=importlib"]
-pythonpath = ["."]
-testpaths = ["tests"]
+addopts = [ "--import-mode=importlib" ]
 filterwarnings = [
   "ignore:The declarative_mixin decorator:sqlalchemy.exc.SADeprecationWarning",
 ]
+pythonpath = [ "." ]
+testpaths = [ "tests" ]

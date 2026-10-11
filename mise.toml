@@ -23,4 +23,4 @@ run = "uv run pyright"
 
 [tasks.dev]
 description = "Start the development server"
-run = "uv run litestar run --reload"
+run = "doppler run -- uv run litestar run --reload"

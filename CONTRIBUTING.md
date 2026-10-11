@@ -142,6 +142,24 @@ jj does not run Git hooks, so a local `commit-msg` hook cannot check the
 format ([ADR-0006](docs/adr/0006-use-jujutsu-with-git-backend.md)). The format
 will be checked in CI on pull requests.
 
+## Test-driven development
+
+Features are built test first
+([ADR-0014](docs/adr/0014-use-test-driven-development.md)), and the commit
+history records that order:
+
+1. Write a test for the new behavior and run `uv run pytest` to confirm it
+   fails.
+2. Commit the failing test on its own, with the `test` type:
+   `test: add failing tests for serving HTMX`
+3. Write the code that makes the test pass, and commit it with the `feat` or
+   `fix` type.
+4. If the code needs cleaning up, do it with the tests still passing, and
+   commit it with the `refactor` type.
+
+A commit that contains only a failing test is expected. The pull request as
+a whole must pass its tests.
+
 ## Signed commits
 
 Commits pushed to this repository should be signed

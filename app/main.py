@@ -1,3 +1,8 @@
+"""Create and configure the Tiebreaker application.
+
+`litestar run` finds the `app` object in this module automatically.
+"""
+
 from pathlib import Path
 
 from litestar import Litestar, get
@@ -8,6 +13,11 @@ from litestar.template.config import TemplateConfig
 
 @get("/")
 async def home() -> Template:
+    """Render the home page.
+
+    Returns:
+        The rendered `base.html` template.
+    """
     return Template(template_name="base.html")
 
 

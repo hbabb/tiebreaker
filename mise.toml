@@ -1,2 +1,26 @@
 [tools]
 python = "3.14"
+
+[tasks.lint]
+description = "Check code with Ruff"
+run = "uv run ruff check"
+
+[tasks."lint:fix"]
+description = "Fix what Ruff can fix automatically"
+run = "uv run ruff check --fix"
+
+[tasks.format]
+description = "Format code with Ruff"
+run = "uv run ruff format"
+
+[tasks.test]
+description = "Run the test suite"
+run = "uv run pytest"
+
+[tasks.typecheck]
+description = "Run typecheck with pyright"
+run = "uv run pyright"
+
+[tasks.dev]
+description = "Start the development server"
+run = "uv run litestar run --reload"

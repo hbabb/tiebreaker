@@ -17,3 +17,11 @@ dev = [
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
+
+[tool.pytest]
+addopts = ["--import-mode=importlib"]
+pythonpath = ["."]
+testpaths = ["tests"]
+filterwarnings = [
+  "ignore:The declarative_mixin decorator:sqlalchemy.exc.SADeprecationWarning",
+]

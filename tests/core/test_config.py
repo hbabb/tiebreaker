@@ -28,7 +28,7 @@ def test_database_url_has_a_development_default() -> None:
 
 
 def test_missing_secret_key_is_an_error() -> None:
-    """Loadking fails when the secret key is not set."""
+    """Loading fails when the secret key is not set."""
     with pytest.raises(KeyError, match="TIEBREAKER_SECRET_KEY"):
         load_settings({})
 

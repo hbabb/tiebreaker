@@ -3,6 +3,7 @@
 from collections.abc import Iterator
 
 import pytest
+from litestar import post
 from litestar.testing import TestClient
 
 from app.core.config import Settings
@@ -22,4 +23,19 @@ def settings() -> Settings:
 def client(settings: Settings) -> Iterator[TestClient]:
     """A test client for an app built with the test settings."""
     with TestClient(app=create_app(settings)) as client:
+        yield client
+
+
+@pytest.fixture
+def csrf_client(settings: Settings) -> Iterator[TestClient]:
+    """Provide a test client with a POST endpoint for CSRF tests."""
+
+    @post("/test-csrf")
+    async def test_handler() -> dict[str, bool]:
+        return {"success": True}
+
+    app = create_app(settings)
+    app.register(test_handler)
+
+    with TestClient(app=app) as client:
         yield client

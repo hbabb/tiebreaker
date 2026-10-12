@@ -12,6 +12,7 @@ from litestar.static_files import create_static_files_router
 from litestar.template.config import TemplateConfig
 
 from app.core.config import Settings, load_settings
+from app.core.security import create_csrf_config
 
 APP_DIR = Path(__file__).parent
 
@@ -53,4 +54,5 @@ def create_app(settings: Settings | None = None) -> Litestar:
             directory=APP_DIR / "templates",
             engine=JinjaTemplateEngine,
         ),
+        csrf_config=create_csrf_config(settings),
     )

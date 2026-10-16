@@ -39,3 +39,9 @@ def test_settings_cannot_be_changed_after_loading() -> None:
 
     with pytest.raises(dataclasses.FrozenInstanceError):
         settings.secret_key = "changed"  # pyright: ignore[reportAttributeAccessIssue]
+
+def test_secret_key_is_hidden_when_printed() -> None:
+    """The secret key never appears when settings are printed or logged."""
+    settings = load_settings({"TIEBREAKER_SECRET_KEY": "test-secret"})
+
+    assert "test-secret" not in repr(settings)

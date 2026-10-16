@@ -6,7 +6,7 @@ host's environment in production (ADR-0017).
 
 import os
 from collections.abc import Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 DEFAULT_DATABASE_URL = "sqlite+aiosqlite:///data/tiebreaker.db"
 
@@ -20,7 +20,7 @@ class Settings:
         database_url: SQLAlchemy URL of the database.
     """
 
-    secret_key: str
+    secret_key: str = field(repr=False)
     database_url: str
 
 

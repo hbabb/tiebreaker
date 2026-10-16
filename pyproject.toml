@@ -10,6 +10,8 @@ classifiers = [
 dependencies = [
   "aiosqlite>=0.22.1",
   "litestar[sqlalchemy,standard]>=2.24",
+  "pydantic>=2.14.1",
+  "pydantic-settings>=2.16.0",
 ]
 
 [dependency-groups]
